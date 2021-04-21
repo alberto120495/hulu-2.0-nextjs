@@ -1,0 +1,31 @@
+Crear App
+    npx create-next-app my-project
+
+Instalar  Tailwind
+    npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+
+Create config file
+    npx tailwindcss init -p
+
+Configurar Tailwind para remover estilos que no se usan. En tailwind.config.js
+  module.exports = {
+   mode:'jit',
+   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+      extend: {},
+    },
+    variants: {
+      extend: {},
+    },
+    plugins: [],
+  }
+
+Incluir tailwind en el proyecto en global.css
+    /* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Run next
+  npm run dev
